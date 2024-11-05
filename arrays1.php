@@ -119,14 +119,51 @@ $strangeArray = [
 ];
 
 var_dump($strangeArray);
+echo "\n\n";    // Pulando linhas
 
 // Outra maneira de mostrar os dados de um array utilizando o comando "print_r"
 print_r($strangeArray);
+echo "\n\n";    // Pulando linhas
 
 
 /* Finalizando o terceiro Bloco */
 echo "</pre>";    // Apenas para facilitar a visualização no formato HTML
 echo "\n\n<br /><hr /><br />\n\n";
 
+
+/* Iniciando quarto bloco */
+echo "<pre>";    // Apenas para facilitar a visualização no formato HTML
+echo PHP_EOL; // Quebra de linha
+
+// Verificando se existe uma chave no array
+
+if (array_key_exists("brand", $mustang))
+{
+    echo 'There is a "brand" key in "$mustang" array';
+}
+
+if (array_key_exists("tire", $mustang))
+{
+    echo 'This message will be not shown, because there is not a "tire" key in "$mustang" array';
+}
+
+echo "\n\n";    // Pulando linhas
+
+
+// Removendo um objeto do array
+echo "Before Removing:";
+var_dump($cars);
+echo "\n\n";    // Pulando linhas
+
+// Apaga o indice 1
+unset($cars[1]);
+echo "After Removing:";
+var_dump($cars);
+echo "\n\n";    // Pulando linhas
+
+
+/* Finalizando o quarto Bloco */
+echo "</pre>";    // Apenas para facilitar a visualização no formato HTML
+echo "\n\n<br /><hr /><br />\n\n";
 
 ?>
