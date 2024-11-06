@@ -54,31 +54,47 @@ Morreu na contramão atrapalhando o sábado
         - arrays,
         - foreach
 */
-// TODO: Inserir todos os prefixos - São 17 no total
+// TODO: Inserir todos os prefixos (Inicios das frases) - Total de 17 itens.
 $prefix = array(
     "Amou daquela vez como se fosse a ",
-    "Beijou sua mulher como se fosse a ",
+	"Beijou sua mulher como se fosse a ",
+	"E cada filho seu como se fosse o ",
+	"E atravessou a rua com seu passo ",
+	"Subiu a construção como se fosse ",
+	"Ergueu no patamar quatro paredes ",
+	"Tijolo com tijolo num desenho ",
+	"Seus olhos embotados de cimento e ",
+	"Sentou pra descansar como se fosse ",
+	"Comeu feijão com arroz como se fosse um ",
+	"Bebeu e soluçou como se fosse um ",
+	"Dançou e gargalhou como se ",
+	"E tropeçou no céu como se fosse um ",
+	"E flutuou no ar como se fosse um ",
+	"E se acabou no chão feito um pacote ",
+	"Agonizou no meio do passeio ",
+	"Morreu na contramão atrapalhando o ",
 );
 
 
+// TODO: Continuar colocando os sufixos ( finais da letra ) - Total de 25 itens
 $suffix = array (
     "última",
-    "única",
-    "único",
-    "tímido",
-    "máquina",
-    "solida",
-    "mágica",
-    // TODO: Continuar colocando os sufixos ( finais da letra ) - Também são 17 itens
+	"único",
+	"tímido",
+	"máquina",
+	"sólidas",
+	"mágico",
 );
 
 
 // TODO: Acertar as ordens dos sufixos conforme a parte correta
 $order = array();
-$order[0] = [ 1,2 ];
-$order[1] = [ 3,4 ];
-$order[2] = [ 5,6 ];
+$order[0] = [ 0, 0, 1, 2, 3,  ];
+$order[1] = [ 16, 17, 18, ];
+$order[2] = [ 3, 21, false, false, false, 24, ];
 
+// Iniciando bloco 
+echo "<pre>\n";
 
 // A musica tem 3 partes
 for ($part = 0; $part < 3; $part++)
@@ -86,13 +102,16 @@ for ($part = 0; $part < 3; $part++)
     $prefixIndex = 0;
     foreach($order[$part] as $suffixIndex)
     {
-        if ($suffixIndex != null) // Se a frase não deve existe nessa parte, colocar o sufixo como null
+        if ($suffixIndex !== false) // Se a frase não deve existe nessa parte, colocar o sufixo como "false"
         {
             echo "{$prefix[$prefixIndex]}{$suffix[$suffixIndex]}\n";
-            $prefixIndex++ ;    // Proximo Prefixo
         }
+        $prefixIndex++ ;    // Proximo Prefixo
     }
     echo "\n\n";    // Pula linha para mudar de parte
 }
+
+// Finalizando bloco 
+echo "</pre>\n";
 
 ?>
